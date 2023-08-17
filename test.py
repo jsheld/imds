@@ -11,7 +11,7 @@ try:
     proc = subprocess.Popen([cmd], stdout=subprocess.PIPE, shell=True)
     (message, err) = proc.communicate()
 except Exception as e:
-   message = e;
+   message = err;
 
 app = Flask(__name__)
 
