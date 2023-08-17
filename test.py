@@ -7,16 +7,17 @@ PORT = 8080
 cmd = "TOKEN=`curl -X PUT \"http://169.254.169.254/latest/api/token\" -H \"X-aws-ec2-metadata-token-ttl-seconds: 21600\"` && curl -H \"X-aws-ec2-metadata-token: $TOKEN\" -v http://169.254.169.254/latest/meta-data/"
 
 os.system(cmd);
-try:
-    message = os.environ['$TOKEN']
-except Exception as e:
-    message = e;
+#try:
+#    message = os.environ['$TOKEN']
+#except Exception as e:
+#    message = e;
 
 app = Flask(__name__)
 
 @app.route("/")
 def root():
-  result = message.encode("utf-8")
+  #result = message.encode("utf-8")
+  result = "hello world"
   return result
 
 
