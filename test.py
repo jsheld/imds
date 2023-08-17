@@ -17,8 +17,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-  result = message.encode("utf-8")
-  return result
+  return message
 
 
 if __name__ == "__main__":
